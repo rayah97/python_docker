@@ -57,7 +57,7 @@ jobs:
 
 
       - name: Run Docker Container 
-        uses: addnab/docker-run-action@v3
-        with:
-          image: ${{steps.pullimage.image_id}}
+        run: |
+         docker run -p 8000:5000 ${{steps.pullimage.image_id}}
+     
          
