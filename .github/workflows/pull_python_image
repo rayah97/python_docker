@@ -22,15 +22,16 @@ jobs:
   pull:
     runs-on: ubuntu-latest
     steps:
-      - name: Docker Buildx Pull and Build
-        uses: djbender/docker-buildx-pull-or-build@v0.3
-        with:
-            docker_username: ${{ secrets.DOCKER_HUB_USERNAME }}
-            docker_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-            docker_registry: ${{ inputs.docker-registry }}
-            image: ${{inputs.docker-image}}_new
+      # - name: Docker Buildx Pull and Build
+      #   uses: djbender/docker-buildx-pull-or-build@v0.3
+      #   with:
+      #       docker_username: ${{ secrets.DOCKER_HUB_USERNAME }}
+      #       docker_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      #       docker_registry: ${{ inputs.docker-registry }}
+      #       image: ${{inputs.docker-image}}_new
+
       - name: Run Docker Container 
       - uses: addnab/docker-run-action@v3
         with:
           image: ${{inputs.dockerimage-name}}
-          run: echo "hello Flask jan"
+          run: echo " hello"

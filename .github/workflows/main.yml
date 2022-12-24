@@ -45,19 +45,19 @@ jobs:
             FLASK_ENV=${{inputs.enviornment}}
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{inputs.dockerimage-name}}:latest
   
-      - name: Docker Buildx Pull and Build
-        uses: djbender/docker-buildx-pull-or-build@v0.3
-        id: pullimage
-        with:
-            docker_username: ${{ secrets.DOCKER_HUB_USERNAME }}
-            docker_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-            docker_registry: ${{ inputs.docker-registry }}
-            image: ${{ secrets.DOCKER_HUB_USERNAME }}/${{inputs.dockerimage-name}}
+      # - name: Docker Buildx Pull and Build
+      #   uses: djbender/docker-buildx-pull-or-build@v0.3
+      #   id: pullimage
+      #   with:
+      #       docker_username: ${{ secrets.DOCKER_HUB_USERNAME }}
+      #       docker_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      #       docker_registry: ${{ inputs.docker-registry }}
+      #       image: ${{ secrets.DOCKER_HUB_USERNAME }}/${{inputs.dockerimage-name}}
 
 
 
-      - name: Run Docker Container 
-        run: |
-         docker run -p 8000:5000 ${{steps.pullimage.image_id}}
+      # - name: Run Docker Container 
+      #   run: |
+      #    docker run -p 8000:5000 ${{steps.pullimage.image_id}}
      
          
