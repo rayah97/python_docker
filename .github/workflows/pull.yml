@@ -31,7 +31,7 @@ jobs:
       #       image: ${{inputs.docker-image}}_new
 
       - name: Run Docker Container 
-      - uses: addnab/docker-run-action@v3
-        with:
-          image: ${{inputs.dockerimage-name}}
-          run: echo " hello"
+      # - uses: addnab/docker-run-action@v3
+      #   with:
+      #     image: ${{inputs.dockerimage-name}}
+        run: echo " hello"
